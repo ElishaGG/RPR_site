@@ -1,15 +1,15 @@
 // Навигация
 
 const burgerBtn = document.querySelector('.header__nav-burger');
-const nav = document.querySelector('.header__nav');
+const navList = document.querySelector('.header__nav-list');
 const body = document.querySelector('body');
 const header = document.getElementById('header');
 const arrowUp = document.querySelector('.arrow-up');
 const anchors = document.querySelectorAll('.anchor');
 
 burgerBtn.addEventListener('click', function () {
-  nav.classList.toggle('active');
-  burgerBtn.setAttribute('aria-expanded', nav.classList.contains('active'));
+  navList.classList.toggle('active');
+  burgerBtn.setAttribute('aria-expanded', navList.classList.contains('active'));
   body.classList.toggle('_lock');
 });
 
@@ -18,7 +18,7 @@ anchors.forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(anchor.getAttribute('href'));
     window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-    nav.classList.remove('active');
+    navList.classList.remove('active');
     burgerBtn.setAttribute('aria-expanded', 'false');
     body.classList.remove('_lock');
   });
@@ -34,23 +34,25 @@ window.addEventListener('scroll', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    window.addEventListener('scroll', function() {
-        anchors.forEach(function(anchor) {
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                let fromTop = window.scrollY + 80;
-                if (target.offsetTop <= fromTop && (target.offsetTop + target.offsetHeight) > fromTop) {
-                    anchor.classList.add('active');
-                } else {
-                    anchor.classList.remove('active');
-                }
-            }
-        });
-    });
+window.addEventListener("resize", (event) => {
+    navList.classList.remove('active');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    body.classList.remove('_lock');
 });
 
-
+window.addEventListener('scroll', function() {
+    anchors.forEach(function(anchor) {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+            let fromTop = window.scrollY + 80;
+            if (target.offsetTop <= fromTop && (target.offsetTop + target.offsetHeight) > fromTop) {
+                anchor.classList.add('active');
+            } else {
+                anchor.classList.remove('active');
+            }
+        }
+    });
+});
 
 // Форма и её отправка
 
