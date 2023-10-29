@@ -44,7 +44,7 @@ window.addEventListener('scroll', function() {
     anchors.forEach(function(anchor) {
         const target = document.querySelector(anchor.getAttribute('href'));
         if (target) {
-            let fromTop = window.scrollY + 80;
+            let fromTop = window.scrollY + 90;
             if (target.offsetTop <= fromTop && (target.offsetTop + target.offsetHeight) > fromTop) {
                 anchor.classList.add('active');
             } else {

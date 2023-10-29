@@ -202,7 +202,7 @@ hr {
     height: 2px;
     background-color: rgb(var(--main-header-color));
     border: none;
-    margin: 55px auto;
+    margin: 45px auto;
 }
 
 .hr_2 {
@@ -467,7 +467,7 @@ main {
     color: rgb(var(--main-black-color));
     position: relative;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .products__title::before {
@@ -811,6 +811,7 @@ main {
     font-size: 34px;
     font-weight: 500;
     text-align: center;
+    margin-top: 10px;
     margin-bottom: 2em;
     padding: 0 10px;
 }
@@ -1120,10 +1121,13 @@ main {
 /* tablet */
 
 @media (max-width: 980px) {
+
     .hr_2 {
         display: block;
     }
+
     /* header */
+
     .header__wrapper {
         justify-content: space-around;
     }
@@ -1405,6 +1409,7 @@ main {
 /* mobile */
 
 @media (max-width: 420px) {
+    
     hr {
         margin: 15vw auto;
     }
