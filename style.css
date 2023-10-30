@@ -179,17 +179,13 @@ body {
     transition: transform .2s ease;
 }
 
-.arrow-up::before {
-    content: "";
-    position: absolute;
-    inset: 0 0;
-    width: 100%;
-    height: 100%;
-    transform: scale(1.5);
-}
-
 .arrow-up.scrolled {
     transform: scale(1);
+}
+
+.arrow-up.scrolled:hover,
+.arrow-up.scrolled:focus {
+    transform: scale(1.25);
 }
 
 .visually-hidden {
@@ -218,14 +214,23 @@ hr {
     inset: 0;
     width: 100%;
     z-index: 50;
-    transition: transform .2s ease;
 }
 
 .header.scrolled {
     height: 80px;
     position: fixed;
-    transform: scaleY(1);
+    animation: header .5s ease-in;
     transform-origin: top;
+}
+
+@keyframes header{
+    0% {
+        transform: translateY(-100%);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
 }
 
 .header.scrolled .header__logo {
@@ -290,13 +295,13 @@ hr {
     text-decoration: none;
     font-size: 16px;
     position: relative;
-    padding: 2px 2px 2px 15px;
+    padding: 2px 2px 2px 20px;
     transition: transform .5s ease, border .5s ease;
     transform-origin: center;
     border: 1px dotted transparent;
 }
 
-.header__contacts-link:focus, .header__contacts-link:hover, .header__contacts-link:active {
+.header__contacts-link:hover, .header__contacts-link:active {
     transform: scale(1.1);
     border-bottom: 1px dotted rgb(var(--main-white-color));
 }
@@ -309,17 +314,15 @@ hr {
     width: 15px;
     height: 15px;
     position: absolute;
-    left: -5px;
-    top: 0px
+    inset: 0;
 }
 
 .header__contacts-mail::before {
     content: "@";
     display: block;
-    font-size: 1em;
+    font: inherit;
     position: absolute;
-    left: -5px;
-    top: 0px;
+    inset: 0;
 }
 
 .header__nav-contacts {
@@ -393,7 +396,7 @@ main {
     bottom: -50px;
 }
 
-@keyframes frame1{
+@keyframes aboutus__img1{
     0% { 
         transform: translateY(-30px);
         opacity: 0; 
@@ -404,7 +407,7 @@ main {
     }
 }
 
-@keyframes frame2 {
+@keyframes aboutus__img2 {
     0% {
         transform: translateY(30px);
         opacity: 0;
@@ -426,17 +429,17 @@ main {
 
 .aboutus_pic-1 {
     transform: translateY(0);
-    animation: frame1 1s ease-in;
+    animation: aboutus__img1 1s ease-in;
 }
 
 .aboutus_pic-2 {
     transform: translateY(-20px);
-    animation: frame2 1s ease-in;
+    animation: aboutus__img2 1s ease-in;
 }
 
 .aboutus_pic-3 {
     transform: translateY(15px);
-    animation: frame1 1s ease-in;
+    animation: aboutus__img1 1s ease-in;
 }
 
 .aboutus__ph {
