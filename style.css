@@ -184,7 +184,7 @@ body {
 }
 
 .arrow-up.scrolled:hover,
-.arrow-up.scrolled:focus {
+.arrow-up.scrolled:active {
     transform: scale(1.25);
 }
 
