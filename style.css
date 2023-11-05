@@ -977,6 +977,11 @@ main {
     transition: border .5s ease;
 }
 
+.req__input::placeholder {
+    color: transparent;
+    font-size: 0px;
+}
+
 .invalid {
     border-bottom: 2px dotted tomato;
 }
