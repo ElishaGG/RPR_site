@@ -1355,8 +1355,10 @@ main {
     .projects__img {
         max-width: 96%;
         display: block;
-        transition: transform .5s ease;
-        transform-origin: left center;
+    }
+
+    .projects__card:hover .projects__img {
+        transform: scale(1.05);
     }
 
     .projects__img-wrapper {
@@ -1373,10 +1375,6 @@ main {
         position: absolute;
         z-index: -1;
 
-    }
-
-    .projects__card:nth-child(even) .projects__img {
-        transform-origin: right center;
     }
 
     .img__p-2 {
