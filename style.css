@@ -1355,6 +1355,8 @@ main {
     .projects__img {
         max-width: 96%;
         display: block;
+        transition: transform .5s ease;
+        transform-origin: left center;
     }
 
     .projects__img-wrapper {
@@ -1373,13 +1375,8 @@ main {
 
     }
 
-    .projects__img {
-        transition: transform .5s ease;
-        transform-origin: center;
-    }
-
     .projects__card:nth-child(even) .projects__img {
-        transform-origin: center;
+        transform-origin: right center;
     }
 
     .img__p-2 {
