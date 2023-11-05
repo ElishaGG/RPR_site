@@ -1715,7 +1715,10 @@ main {
         top: 14%;
         right: 94%;
         max-width: 980px;
-        height: auto;
+        width: 51vw;
+        height: 520px;
+        object-fit: cover;
+        object-position: left;
     }
 
     .projects__img {
