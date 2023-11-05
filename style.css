@@ -674,7 +674,7 @@ main {
     transform: scale(1.25);
 }
 
-.dev__list-item:hover .list-item__title::after {
+.dev__list-item:hover::after {
     transform: scale(1);
 }
 
@@ -1305,7 +1305,7 @@ main {
         text-align: center;
     }
 
-    .list-item__title::after {
+    .dev__list-item::after {
         content: "";
         width: 100%;
         height: 2px;
@@ -1625,7 +1625,7 @@ main {
         margin-left: 75px;
     }
 
-    .list-item__title::after {
+    .dev__list-item::after {
         content: "";
         width: 4px;
         height: 100%;
