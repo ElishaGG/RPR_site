@@ -331,7 +331,7 @@ hr {
 
 main {
     overflow: hidden;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 /* Начало первого раздела */
@@ -345,10 +345,8 @@ main {
     display: block;
     position: absolute;
     inset: 0 0;
-    top: -3px;
     box-sizing: border-box;
     z-index: -1;
-    transform-origin: center;
     height: 690px;
     background-color: rgb(var(--main-grey-blue));
     background-image: url(images/JPG/main-banner.jpg);
@@ -359,6 +357,7 @@ main {
     );
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right center;
 }
 
 .aboutus__wrapper {
@@ -1669,7 +1668,7 @@ main {
         left: 460px;
         top: 198px;
         background: linear-gradient(45deg, rgb(var(--main-blue-color)) 0%, rgb(var(--main-gray-color)) 100%);
-        width: 90%;
+        width: 91%;
         justify-content: left;
     }
 
