@@ -418,7 +418,7 @@ main {
 }
 
 .aboutus__img {
-    background-color: rgb(var(--main-grey-blue));
+    background-color: rgb(var(--main-grey-blue) / .8);
     max-width: 100%;
     height: auto;
     user-select: none;
