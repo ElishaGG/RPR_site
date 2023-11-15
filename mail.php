@@ -15,17 +15,27 @@
             <body>
                 <div>
                     <style>
-                        body{background-color:#eee; padding:20px; margin:0px;}
-                        div,h2{margin:0px; padding:0px;}
-                        p{padding:10px 20px; display:block;}
-                        a{margin:0px 5px;}
+                        body, html {padding: 0;margin: 0;width: 100%;height: 100%;box-sizing: border-box;}
+                        div {background-color: #eeeeee;margin: 0px;padding: 10px;width: 100%;height: 100%;box-sizing: border-box;}
+                        h2,p {margin: 0;padding: 10px 0;box-sizing: border-box;}
+                        a,span {margin: 0px 5px;}
                     </style>
                     <h2>Запрос с сайта</h2>
-                    <p><strong>Имя: </strong>$name</p>
-                    <p><strong>Телефон: </strong><a href='tel:$telephone' style='letter-spacing:2px; line-hight:1em; text-decoration:none;color:#333;border-bottom: 1px #333 dotted;'>$telephone</a></p>
-                    <p><strong>Email: </strong><a href='mailto:$email' style='letter-spacing:2px; line-hight:1em; text-decoration:none;color:#333;border-bottom: 1px #333 dotted;'>$email</a></p>
-                    <p><strong>Сообщение: </strong><span style='color:#333;'>$message</span></p>
-                </.div>
+                    <hr>
+                    <p><strong>Имя: </strong><span style='letter-spacing:2px; text-decoration:none;color:#333;'>$name</span></p>
+                    <p><strong>Телефон: </strong>
+                        <a href='tel:$telephone'
+                        style='letter-spacing:2px; text-decoration:none;color:#333;border-bottom: 1px #333 dotted;'>$telephone
+                        </a>
+                    </p>
+                    <p>
+                        <strong>Email: </strong>
+                        <a href='mailto:$email'
+                        style='letter-spacing:2px; text-decoration:none;color:#333;border-bottom: 1px #333 dotted;'>$email</a>
+                    </p>
+                    <hr>
+                    <p><strong>Сообщение: </strong><span style='color:#333;'><span style='letter-spacing:2px; text-decoration:none;color:#333;'>$message</span></span></p>
+                </div>
             </body>
         </html>
     ";
