@@ -298,12 +298,12 @@ hr {
     padding: 2px 2px 2px 20px;
     transition: transform .5s ease, border .5s ease;
     transform-origin: center;
-    border: 1px dotted transparent;
+    border: 1px dashed transparent;
 }
 
 .header__contacts-link:hover, .header__contacts-link:active {
     transform: scale(1.1);
-    border-bottom: 1px dotted rgb(var(--main-white-color));
+    border-bottom: 1px dashed rgb(var(--main-white-color));
 }
 
 .header__contacts-phone::before {
@@ -403,6 +403,7 @@ main {
 
     80% { 
         transform: translateY(30px);
+        opacity: 1;
     }
 }
 
@@ -414,6 +415,7 @@ main {
 
     80% {
         transform: translateY(-30px);
+        opacity: 1;
     }
 }
 
@@ -619,12 +621,17 @@ main {
 }
 
 .dev__list-item::before {
+    content: "";
     transition: transform .5s ease;
+    display: block;
+    width: 50px;
+    height: 50px;
 }
 
 .list-item--1::before {
     content: url(images/svg/dev1.svg);
     width: 53px;
+    height: auto;
 }
 
 .list-item--2::before {
@@ -636,6 +643,7 @@ main {
 .list-item--3::before {
     content: url(images/svg/dev3.svg);
     width: 49px;
+    height: auto;
 }
 
 .list-item--4::before {
@@ -676,6 +684,7 @@ main {
 
 .dev__list-item:hover::after {
     transform: scale(1);
+    opacity: 1;
 }
 
 .advantages {
@@ -831,14 +840,10 @@ main {
 }
 
 .projects__img {
-    transition: transform .5s ease;
-    transform-origin: left top;
-    height: auto;
     width: auto;
-}
-
-.projects__card:hover .projects__img {
-    transform: scale(1.1);
+    height: auto;
+    object-fit: contain;
+    transform-origin: left top;
 }
 
 .projects__card:nth-child(even) .projects__img {
@@ -983,11 +988,11 @@ main {
 }
 
 .invalid {
-    border-bottom: 2px dotted tomato;
+    border-bottom: 2px dashed tomato;
 }
 
 .req__input:active,.req__input:focus {
-    border-bottom: 2px dotted rgb(var(--main-blue-color));
+    border-bottom: 2px dashed rgb(var(--main-blue-color));
 }
 
 .req__input:focus ~ span, .req__input:not(:placeholder-shown) ~ span {
@@ -1030,7 +1035,7 @@ main {
 }
 
 .req__form-status a{
-    text-decoration: dotted;
+    text-decoration: dashed;
     color: #fff;
     font-weight: 400;
     cursor: pointer;
@@ -1063,13 +1068,13 @@ main {
 }
 
 .contacts__link {
-    border-bottom: 1px dotted rgb(var(--main-blue-color));
+    border-bottom: 1px dashed rgb(var(--main-blue-color));
     transition: border .2s ease;
 }
 
 .contacts__link:hover,
 .contacts__link:focus-visible {
-    border-bottom: 0px dotted transparent;
+    border-bottom: 0px dashed transparent;
 }
 
 .contacts__block-1 {
@@ -1298,7 +1303,8 @@ main {
     }
 
     .dev__list-item {
-        margin-top: 25px;
+        margin-top: 5px;
+        padding: 20px 5px 5px 5px;
     }
 
     .dev__list-item::before {
@@ -1306,20 +1312,22 @@ main {
     }
 
     .list-item__title {
-        margin: 25px 0 10px 0;
+        margin: 20px 0 10px 0;
         text-align: center;
     }
 
     .dev__list-item::after {
         content: "";
         width: 100%;
-        height: 5%;
-        background-color: rgb(var(--main-grey-blue) / .25);
-        inset: 65px 0;
+        height: 100%;
+        inset: 0 0;
         position: absolute;
         transition: transform .5s ease;
-        transform: scale(0);
+        transform: scale(.9);
+        opacity: 0;
         transform-origin: center;
+        border: 2px dashed rgb(var(--main-grey-blue));
+        box-sizing: border-box;
     }
 
     .list-item__desc {
@@ -1354,6 +1362,7 @@ main {
     .projects__img {
         max-width: 96%;
         display: block;
+        transition: transform .5s ease;
     }
 
     .projects__card:hover .projects__img {
@@ -1714,6 +1723,14 @@ main {
     .projects__img {
         width: 612px;
         height: auto;
+        padding: 5px;
+        border: 2px transparent dashed;
+        transition: transform .5s ease .1s, border .2s ease;
+    }
+
+    .projects__card:hover .projects__img {
+        transform: scale(1.1);
+        border: 2px rgb(var(--main-blue-color)) dashed;
     }
 
     .projects__card {
