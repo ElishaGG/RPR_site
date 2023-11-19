@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = "pavel.h@rpr.org.ru";
+    // $to = "pavel.h@rpr.org.ru";
     $subject = "Запрос с сайта";
     $headers = "From: naumov.e@rpr.org.ru\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
