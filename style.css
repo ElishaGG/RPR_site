@@ -357,7 +357,8 @@ main {
     );
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right center;
+    background-position: 75%;
+    background-attachment:fixed;
 }
 
 .aboutus__wrapper {
@@ -1422,7 +1423,7 @@ main {
     }
 
     .header__logo {
-        height: 15vw;
+        height: 40px;
         width: auto;
     }
 
@@ -1442,10 +1443,8 @@ main {
     }
 
     .header__nav-burger {
-        min-width: 2.4em;
-        min-height: 1.8em;
-        max-width: 9.6vw;
-        max-height: 7.2vw;
+        max-width: 38px;
+        max-height: 30px;
     }
 
     .aboutus__title {
