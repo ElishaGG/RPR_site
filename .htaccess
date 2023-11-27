@@ -1,8 +1,18 @@
 <IfModule mod_headers.c>
     RewriteEngine On
+    
+    # Определение пути к подпапке
+    RewriteCond %{REQUEST_URI} ^/(.*?)/?$
+    RewriteRule ^ - [E=SUBFOLDER:%1]
+    
+    # Использование переменной SUBFOLDER в RewriteBase
+    RewriteBase /%{ENV:SUBFOLDER}/
+    
+    # Перенаправление на index.html
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ %{DOCUMENT_ROOT}/ [L]
+    RewriteRule ^(.*)$ index.html [L]
+
     Header unset Server
     Header unset X-Powered-By
     Header set X-XSS-Protection "1; mode=block"
