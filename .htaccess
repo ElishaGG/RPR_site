@@ -1,12 +1,15 @@
 <IfModule mod_headers.c>
     RewriteEngine On
+
     RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
     RewriteRule ^ - [E=BASE:%1]
-    RewriteBase %{ENV:BASE}/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.html [L]
 
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ - [L]
+
+    RewriteRule ^ %{ENV:BASE}/index.html [L]
+    
     Header unset Server
     Header unset X-Powered-By
     Header set X-XSS-Protection "1; mode=block"
