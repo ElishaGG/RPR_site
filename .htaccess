@@ -1,19 +1,8 @@
-ErrorDocument 404 /404.html
-ErrorDocument 401 /404.html
-ErrorDocument 403 /404.html
-
-AddType application/javascript .js
-AddType text/css .css
-
-Options -Indexes
-
-<FilesMatch "^\.ht">
-    Order allow,deny
-    Deny from all
-    Satisfy All
-</FilesMatch>
-
 <IfModule mod_headers.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ %{DOCUMENT_ROOT}/ [L]
     Header unset Server
     Header unset X-Powered-By
     Header set X-XSS-Protection "1; mode=block"
@@ -22,3 +11,18 @@ Options -Indexes
         Header set Cache-Control "no-store"
     </FilesMatch>
 </IfModule>
+
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+ErrorDocument 404 /404.html
+ErrorDocument 401 /404.html
+ErrorDocument 403 /404.html
+
+AddType application/javascript .js
+AddType text/css .css
+
+Options -Indexes
