@@ -183,8 +183,7 @@ body {
     transform: scale(1);
 }
 
-.arrow-up.scrolled:hover,
-.arrow-up.scrolled:active {
+.arrow-up.scrolled:hover {
     transform: scale(1.25);
 }
 
